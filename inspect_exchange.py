@@ -20,11 +20,11 @@ def inspect(path: Path) -> dict:
 
 def validate(data: dict) -> None:
     for block in data["blocks"]:
-            assert len(block["positions"]) == len(block["q"])
-            assert np.shape(block["q"])[1] == data["width"]
-            assert all(-128 <= q < 128 for row in block["q"] for q in row)
-            assert block["phase"] is None or block["phase"] in data["views"]
-        assert np.linalg.norm(data["query"]) <= data["query_norm_ceiling"]
+        assert len(block["positions"]) == len(block["q"])
+        assert np.shape(block["q"])[1] == data["width"]
+        assert all(-128 <= q < 128 for row in block["q"] for q in row)
+        assert block["phase"] is None or block["phase"] in data["views"]
+    assert np.linalg.norm(data["query"]) <= data["query_norm_ceiling"]
 
 
 def main() -> None:
