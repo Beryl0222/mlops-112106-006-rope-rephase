@@ -7,5 +7,5 @@ samples/scene.json 是本地合成的位置视图和键块格式。可检查资�
 ```sh
 python3 -m pip install -r requirements.txt
 python3 inspect_exchange.py samples/scene.json
-python3 -m unittest -v
+python3 -m unittest discover -s tests -v
 ```
